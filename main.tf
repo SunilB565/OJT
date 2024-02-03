@@ -19,7 +19,7 @@ resource "aws_autoscaling_group" "OJT_asg" {
   desired_capacity     = 1
   max_size             = 2
   min_size             = 1
-  vpc_zone_identifier = ["subnet-0e2cad195d4b5c679"] # Replace with your subnet ID(s)
+  vpc_zone_identifier = ["subnet-08c8fc60e7851959a"] # Replace with your subnet ID(s)
 
   launch_configuration = aws_launch_configuration.OJT_launch_config.id
 }
@@ -34,16 +34,16 @@ resource "aws_lb" "OJT_lb" {
   enable_http2                     = true
   idle_timeout                      = 60
 
-  security_groups = ["sg-026f6354e95857378"] # Replace with your security group ID(s)
+  security_groups = ["sg-0783574eebd9067b7"] # Replace with your security group ID(s)
 
-  subnets = ["subnet-0e2cad195d4b5c679"] # Replace with your subnet ID(s)
+  subnets = ["subnet-08c8fc60e7851959a"] # Replace with your subnet ID(s)
 }
 
 resource "aws_lb_target_group" "OJT_target_group" {
   name     = "OJT-target-group"
   port     = 80
   protocol = "HTTP"
-  vpc_id   = "vpc-0464f2a5e1f0e724f" # Replace with your VPC ID
+  vpc_id   = "vpc-084dde02b8740acef" # Replace with your VPC ID
 }
 
 resource "aws_lb_listener" "OJT_lb_listener" {
