@@ -9,7 +9,7 @@
       "instance_type": "t2.micro",
       "vpc_id": "vpc-0464f2a5e1f0e724f",
       "subnet_id": "subnet-0e2cad195d4b5c679",
-      "ssh_username": "ec2-user",
+      "ssh_username": "ubuntu",
       "ami_name": "ojt-{{timestamp}}",
       "tags": {
         "Name": "OJT-base-Ami"
