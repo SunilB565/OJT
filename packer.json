@@ -4,7 +4,7 @@
       "type": "amazon-ebs",
       "access_key": "AKIAXYVS6QBHVGJ5VULI",
       "secret_key": "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",
-      "region": "ap-south-1a",
+      "region": "ap-south-1",
       "source_ami": "ami-0922dda2f90bd173a",
       "instance_type": "t2.micro",
       "vpc_id": "vpc-084dde02b8740acef",
