@@ -12,6 +12,8 @@ source "amazon-ebs" "example" {
   ami_name      = "example-ami"
   access_key    = var.aws_access_key
   secret_key    = var.aws_secret_key
+  subnet_id     = "subnet-0917ac5111271f16a"
+  vpc_id        = "vpc-03ebdc2c9f18fbfc9"
   instance_type = "t2.micro"
   region        = "ap-south-1"
   source_ami    = "ami-01cfd552ecdd27958"
