@@ -13,6 +13,7 @@ source "amazon-ebs" "example" {
   instance_type = "t2.micro"
   region        = "us-west-2"
   source_ami    = "ami-01cfd552ecdd27958"
+  ssh_username  = "ubuntu"
 }
 
 build {
