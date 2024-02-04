@@ -1,43 +1,22 @@
-packer {
-  required_plugins {
-    amazon = {
-      version = ">= 1.2.8"
-      source  = "github.com/hashicorp/amazon"
-    }
+builders {
+  type             = "amazon-ebs"
+  access_key       = "AKIAXYVS6QBHVGJ5VULI"
+  secret_key       = "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"
+  region           = "ap-south-1"
+  source_ami       = "ami-02950dbba2cc7b721"
+  instance_type    = "t2.micro"
+  vpc_id           = "vpc-084dde02b8740acef"
+  subnet_id        = "subnet-08c8fc60e7851959a"
+  security_group_ids = ["sg-0783574eebd9067b7"]
+  ssh_username     = "ubuntu"
+  ami_name         = "ojt-${timestamp}"
+  
+  tags = {
+    Name = "OJT-base-Ami"
   }
 }
 
-source "amazon-ebs" "ubuntu" {
-  ami_name      = "httpd-customimage-ubuntu-aws-{{timestamp}}"
-  instance_type = "t2.micro"
-  region        = "us-east-1"
-
-  source_ami_filter {
-    filters = {
-      name                = "ubuntu/images/*ubuntu-jammy-22.04-amd64-server-*"
-      root-device-type    = "ebs"
-      virtualization-type = "hvm"
-    }
-    most_recent = true
-    owners      = ["099720109477"]
-  }
-
-  ssh_username = "ubuntu"
-}
-
-build {
-  name    = "aws-packer"
-  sources = ["source.amazon-ebs.ubuntu"]
-
-  provisioner "shell" {
-    environment_vars = [
-      "FOO=hello world",
-    ]
-    inline = [
-      "echo Installing apache2",
-      "sleep 30",
-      "sudo apt-get update",
-      "sudo apt-get install -y apache2",
-    ]
-  }
+provisioners {
+  type    = "shell"
+  script  = "installscript.sh"
 }
