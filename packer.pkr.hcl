@@ -1,3 +1,9 @@
+provider "aws" {
+  access_key = var.aws_access_key
+  secret_key = var.aws_secret_key
+  region     = "ap-south-1"  # Update with your desired AWS region
+}
+
 variable "aws_access_key" {
   type    = string
   default = "AKIAXYVS6QBHVGJ5VULI"
