@@ -1,11 +1,11 @@
 variable "aws_access_key" {
   type    = string
-  default = "your_aws_access_key"
+  default = "AKIAXYVS6QBHVGJ5VULI"
 }
 
 variable "aws_secret_key" {
   type    = string
-  default = "your_aws_secret_key"
+  default = "ZD03jbbQR9JMk41G8qCBiOgUrIKO0GEUvkzBA9q3"
 }
 
 source "amazon-ebs" "example" {
