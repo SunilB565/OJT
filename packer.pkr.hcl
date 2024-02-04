@@ -13,7 +13,7 @@ source "amazon-ebs" "example" {
   access_key    = var.aws_access_key
   secret_key    = var.aws_secret_key
   instance_type = "t2.micro"
-  region        = "us-west-2"
+  region        = "ap-south-1"
   source_ami    = "ami-01cfd552ecdd27958"
   ssh_username  = "ubuntu"
 }
